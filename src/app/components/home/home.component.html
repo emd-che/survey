@@ -1,0 +1,32 @@
+<ng-template #loggedOut>
+    <h2>please log in or register to take the survey</h2>
+</ng-template>
+
+<div class="container mb-5 mt-5" *ngIf='this.isLoggedIn;  else loggedOut'>
+
+
+    <form #surveyform="ngForm" (ngSubmit)="onSubmit(surveyform)">
+        <div class="form-group">
+            <label for="favlang">What is your favorite programming language?</label>
+            <input class="form-control mb-3" type="text" name="favlang" placeholder="favorite programmming language" ngModel>
+        </div>
+        <div class="form-group"> <label for="favpet">What is your favorite pet</label>
+            <select class="form-control mb-3" name="favpet" placeholder="favorite pet" id="" ngModel>
+                <option value="cats">Cats</option>
+                <option value="dogs">Dogs</option>
+            </select>
+        </div>
+        <div class="form-group"> <label for="favmovie">What is your favorite movie?</label>
+            <input class="form-control mb-3" type="text" name="favmovie" placeholder="favorite movie" ngModel>
+        </div>
+        <div class="form-group"> <label for="workouthours">How much hours you workout?</label>
+            <input class="form-control mb-3" type="number" name="workouthours" placeholder="workout hours" ngModel>
+        </div>
+        <div class="form-group"><label for="suggustion">can you please give us a suggustion to improve?</label>
+            <textarea placeholder="suggustion" class="form-control mb-3" name="suggustion" id="" cols="30" rows="10" ngModel></textarea>
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="submitsurvey">
+    </form>
+
+</div>

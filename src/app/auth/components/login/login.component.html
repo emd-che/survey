@@ -1,0 +1,27 @@
+<div class="container mt-5">
+
+    <div *ngIf = '!this.isLoggedIn'>
+        <h4 class="mb-4">Login</h4>
+        <form #loginform = "ngForm" (ngSubmit) = "onSubmit(loginform)" >
+            <div class="form-group mb-4">
+                <input class="form-control" type = "text" name = "username" placeholder = "Username" ngModel>
+
+            </div>
+            <div class="form-group mb-4">
+                <input class="form-control" type = "password" name = "password" placeholder = "Password" ngModel>
+            </div>
+          
+            <input class="btn btn-outline-primary" type = "submit" value = "Login">
+        </form>
+    </div>
+
+
+    <div  *ngIf = 'this.isLoggedIn'>
+       
+        <h1 class="mb-4">welcome </h1>
+        <a  class="btn btn-primary" [routerLink] = "['/home']" routerLinkActive = "active">take the survey</a>
+        <button class="btn btn-outer-primary" (click) = 'logout()'>Log-out</button>
+          
+    </div>
+
+</div>
