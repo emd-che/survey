@@ -22,4 +22,9 @@ describe('NavComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('it should show username if user is logged', () => {
+    component.isLoggedIn = true
+    fixture.detectChanges();
+    expect(component.username).not.toContain("");
+  });
 });

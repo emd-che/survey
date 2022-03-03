@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomeComponent implements OnInit {
 
   isLoggedIn: boolean = false
-  userId: number = this.auth.getUserDetails()[0].id
+  userId: number = 0
 
   ngOnInit(): void {
     this.isUserLoggedIn()
@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   ) { }
   
   onSubmit(form: NgForm) {
-    let userId = this.userId
+    let userId =  this.auth.getUserDetails()[0].id
     let data= {...form.value, userId}
     console.log(data)
     this.api.postTypeRequest('user/surveydata', data).subscribe((res: any) => {

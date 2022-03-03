@@ -15,7 +15,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+
   ],
   exports: [
     LoginComponent,
